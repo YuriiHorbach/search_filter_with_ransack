@@ -1,0 +1,26 @@
+<h1>Transactions</h1>
+
+<%= render 'transactions/search_form' %>
+
+<br>
+
+<table class='table'>
+  <thead >
+    <tr>
+      <th><%= sort_link(@q, :last_4, "Last 4 digits", default_order: :asc) %></th>
+      <th><%= sort_link(@q, :amount, "Amount", )%></th>
+    </tr>
+  </thead>
+  <tbody >
+      <% @transactions.each do |transaction| %>
+        <tr>
+            <td>
+              <%= transaction.last_4 %>
+            </td>
+            <td>
+              <%= transaction.amount %>
+            </td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>

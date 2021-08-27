@@ -14,4 +14,5 @@ class TransactionsController < ApplicationController
     def transaction_params
       params.require(:transaction).permit(:last_4, :amount)
     end
+
 end
